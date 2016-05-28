@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulando a DOM</title>
+</head>
+<body>
+<button class="botao-grava">Novo</button>
+<p class="contatos">Contatos cadastrados: 0</p>
+<script type="text/javascript">
+  'use strict';
+  let total = 0;
+  const botao = document.querySelector('.botao-grava');
+  const contatos = document.querySelector('.contatos');
+
+  botao.addEventListener('click', () => {
+    total++;
+    contatos.textContent = 'Contatos cadastrados: '+total;
+  });
+</script>
+</body>
+</html>
