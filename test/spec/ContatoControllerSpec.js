@@ -1,10 +1,10 @@
 'use strict';
-describe("ContatoController", () => {
+describe("ContatoController", function() {
 
-  let $scope;
-  let $httpBackend;
+  var $scope;
+  var $httpBackend;
 
-  beforeEach(() => {
+  beforeEach(function() {
     module('contatooh');
     inject(function($injector, _$httpBackend_){
       $scope = $injector.get('$rootScope').$new();
