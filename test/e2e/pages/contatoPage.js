@@ -17,6 +17,11 @@ const ContatoPage = function(){
   this.obterMensagem = function(){
     return element(by.binding('mensagem.texto')).getText();
   };
+  this.selecionarPrimeiraEmergenciaDaLista = function(){
+    browser.driver.findElements(by.tagName('option')).then(function(options){
+      options[2].click();
+    });
+  }
 }
 
 module.exports = ContatoPage;

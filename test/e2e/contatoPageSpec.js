@@ -15,6 +15,7 @@ describe('Cadastro de contatos', function(){
 
     pagina.digitarNome(nome);
     pagina.digitarEmail(email);
+    pagina.selecionarPrimeiraEmergenciaDaLista();
     pagina.salvar();
     expect(pagina.obterMensagem()).toContain('sucesso');
   });
