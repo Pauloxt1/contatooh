@@ -43,6 +43,24 @@ module.exports = function(grunt){
             },
             {
                 expand: true,
+                cwd: 'dist',
+                src: ['*.js'],
+                dest: 'dist'
+            },
+            {
+                expand: true,
+                cwd: 'dist/config',
+                src: ['*.js'],
+                dest: 'dist/config'
+            },
+            {
+                expand: true,
+                cwd: 'dist/app',
+                src: ['*.js'],
+                dest: 'dist/app'
+            },
+            {
+                expand: true,
                 cwd: 'dist/app/controllers',
                 src: ['*.js'],
                 dest: 'dist/app/controllers'
