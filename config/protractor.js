@@ -6,7 +6,7 @@ exports.config = {
   sauceKey: config.sauceKey,
   capabilities: {
     'name': config.sauceTestName,
-    'browserName': 'Chrome'
+    'browserName': 'Chrome',
     'platform': 'Windows 10',
     'version': 'latest',
     'tunnel-identifier': config.travisJobNumber,
