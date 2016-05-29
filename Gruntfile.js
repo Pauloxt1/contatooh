@@ -22,12 +22,44 @@ module.exports = function(grunt){
         presets:['babel-preset-es2015']
       },
       dist:{
-        files:{
-          'dist/public/js/services/ContatoService.js':'dist/public/js/services/ContatoService.js',
-          'dist/public/js/controllers/ContatoController.js':'dist/public/js/controllers/ContatoController.js',
-          'dist/public/js/controllers/ContatosController.js':'dist/public/js/controllers/ContatosController.js',
-          'dist/public/js/main.js':'dist/public/js/main.js',
-        }
+        files: [
+            {
+                expand: true,
+                cwd: 'dist/public/js',
+                src: ['*.js'],
+                dest: 'dist/public/js'
+            },
+            {
+                expand: true,
+                cwd: 'dist/public/js/controllers',
+                src: ['*.js'],
+                dest: 'dist/public/js/controllers'
+            },
+            {
+                expand: true,
+                cwd: 'dist/public/js/services',
+                src: ['*.js'],
+                dest: 'dist/public/js/services'
+            },
+            {
+                expand: true,
+                cwd: 'dist/app/controllers',
+                src: ['*.js'],
+                dest: 'dist/app/controllers'
+            },
+            {
+                expand: true,
+                cwd: 'dist/app/models',
+                src: ['*.js'],
+                dest: 'dist/app/models'
+            },
+            {
+                expand: true,
+                cwd: 'dist/app/routes',
+                src: ['*.js'],
+                dest: 'dist/app/routes'
+            }
+        ]
       }
     },
     ngAnnotate:{
