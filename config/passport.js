@@ -1,5 +1,6 @@
 'use strict';
 
+const config = require('./config.js')();
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 
@@ -9,8 +10,8 @@ module.exports = () => {
   const Usuario = require('../app/models/usuario');
 
   passport.use(new  GitHubStrategy({
-    clientID: '6dd78481113dc4eaa71b',
-    clientSecret: '7ac49ccfcc5fe22f8ce59b940f445021574a37d5',
+    clientID: config.clientID,
+    clientSecret: config.clientSecret,
     callbackURL: 'http://localhost:3000/auth/github/callback'
   }, (acessToken, refreshToken, profile, done) => {
 
