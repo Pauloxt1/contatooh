@@ -7,8 +7,6 @@ exports.config = {
   capabilities: {
     'name': config.sauceTestName,
     'browserName': 'Chrome',
-    'platform': 'Windows 10',
-    'version': 'latest',
     'tunnel-identifier': config.travisJobNumber,
     'build': config.travisBuild
   },
@@ -17,8 +15,6 @@ exports.config = {
     browser.driver.get('http://localhost:3000');
     browser.driver.findElement(by.id('entrar')).click();
     browser.driver.findElement(by.id('login_field')).sendKeys(config.selinumUser);
-    console.log(config.selinumUser);
-    console.log(config.selinumUserPassword);
     browser.driver.findElement(by.id('password')).sendKeys(config.selinumUserPassword);
     browser.driver.findElement(by.name('commit')).click();
   }
