@@ -1,11 +1,14 @@
-var config = require('./config.js')();
+'use strict';
+const config = require('./config.js')();
 
 exports.config = {
   sauceUser: config.sauceUser,
   sauceKey: config.sauceKey,
   capabilities: {
     'name': config.sauceTestName,
-    'browserName': 'chorme',
+    'browserName': 'Chrome'
+    'platform': 'Windows 10',
+    'version': 'latest',
     'tunnel-identifier': config.travisJobNumber,
     'build': config.travisBuild
   },
