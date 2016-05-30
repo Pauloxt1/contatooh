@@ -3,19 +3,6 @@
 module.exports = function(grunt){
 
   grunt.initConfig({
-    copy: {
-      project:{
-        expand: true,
-        cwd: '.',
-        src:['**', '!Gruntfile.js', '!package.json', '!bower.json'],
-        dest: 'dist'
-      }
-    },
-    clean:{
-      dist:{
-        src: 'dist'
-      }
-    },
     babel:{
       options:{
         sourceMap:true,
@@ -25,21 +12,21 @@ module.exports = function(grunt){
         files: [
             {
                 expand: true,
-                cwd: 'dist/public/js',
+                cwd: 'public/js',
                 src: ['*.js'],
-                dest: 'dist/public/js'
+                dest: 'public/js'
             },
             {
                 expand: true,
-                cwd: 'dist/public/js/controllers',
+                cwd: 'public/js/controllers',
                 src: ['*.js'],
-                dest: 'dist/public/js/controllers'
+                dest: 'public/js/controllers'
             },
             {
                 expand: true,
-                cwd: 'dist/public/js/services',
+                cwd: 'public/js/services',
                 src: ['*.js'],
-                dest: 'dist/public/js/services'
+                dest: 'public/js/services'
             }
         ]
       }
@@ -47,24 +34,23 @@ module.exports = function(grunt){
     ngAnnotate:{
       scripts:{
         expand:true,
-        src: ['dist/public/js/**/*.js']
+        src: ['public/js/**/*.js']
       }
     },
     usemin:{
-      html: 'dist/app/views/**/*.ejs'
+      html: 'app/views/**/*.ejs'
     },
     useminPrepare:{
       options:{
-        root: 'dist/public',
-        dest: 'dist/public'
+        root: 'public',
+        dest: 'public'
       },
-      html: 'dist/app/views/**/*.ejs'
+      html: 'app/views/**/*.ejs'
     }
   });
 
-  grunt.registerTask('default', ['dist', 'minifica']);
-  grunt.registerTask('dist', ['clean', 'copy', 'babel']);
-  grunt.registerTask('minifica', ['useminPrepare', 'ngAnnotate', 'concat:generated', 'uglify:generated', 'cssmin:generated', 'usemin']);
+
+  grunt.registerTask('minifica', ['babel','useminPrepare', 'ngAnnotate', 'concat:generated', 'uglify:generated', 'cssmin:generated', 'usemin']);
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');

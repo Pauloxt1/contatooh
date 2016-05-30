@@ -2,26 +2,34 @@ language: node_js
 notifications:
   email: psface1@gmail.com
 node_js:
-  - "5"
+- '5'
 services:
-  - mongodb
+- mongodb
 env:
   global:
-    - NODE_ENV: test
+  - NODE_ENV: test
 addons:
   sauce_connect: true
 before_install:
-  - npm install -g bower
-  - npm install -g grunt-cli
-  - npm install -g karma-cli
-  - npm install -g protractor
-  - webdriver-manager update
-  - bower install
+- npm install -g bower
+- npm install -g grunt-cli
+- npm install -g karma-cli
+- npm install -g protractor
+- webdriver-manager update
+- bower install
 before_script:
-  - node test/data.js
-  - grunt
-  - cd dist
+- node test/data.js
+- grunt minifica
 script:
-  - karma start config/karma.config.js --single-run --browsers PhantomJS
-  - node server &
-  - protractor config/protractor.js
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
+deploy:
+  provider: openshift
+  user: psface1@gmail.com
+  password:
+    secure: xmoW/QDiSaj4Sd+6YFosn3nDA0ubauC7VCP1yatgZfVkEzhbJ5sLYmTBI54lE5Hfd/gs+w7qpSPTZj580XanNRPg/8Me5d0oThD2sWsoki4hLuR2NqovDKeQ+G8Z1RRkiGVpEpubM7vW3vhBvr6aGXoQ0HKz5EWuJai3kd/u9sZM3QbQgwWY1ALTlWU2cqmFFp9WPTo6TD6+y6nPEVZiGwRf9tehEvdUWlnRYEQmMbnH3v5QL+NMDAiHXb6+t0RvUvi3RUdADjoOOuLMgv9RYmEnOzd6T+i8y0kPGESqPd6WZ2RWp9F/ej/83bNuXaJVrOsNJVVuQ5N0o8xQIlAIUWFg/fxHmqMS2N+G6m1hTLWWRX60Vm1RDKMyl4dpuozyGwQhpxNqpLBsMVAfibKySt3/f51NFZy8vIc1ZWDbjDnYrhZNyuFbgrWMOzYOqxrtGAxFRXzTPMq+EP0KOh1UmFYKXeVrvlvgNoHoVHMbKLBC/ZDXZ5TxfGE1rhxqdTY85FQqV/6WUwOjMNM/aatdGnYZchspARYQ5saVQeTuABzLHwJHZWghM2bDF4sPouR4hU0tOBpftVhecSzGwBV5azh8YKjaYrbOT2+4TEvm1kxHvAdkBHX10OJcYA71OCK3aASqHC4ULbaehUCjfNT6hSkMNjDHx4v4Mgj6HBYLiNg=
+  app: contatooh
+  domain: contatooh-testedp.rhcloud.com
+  on:
+    repo: Pauloxt1/contatooh
