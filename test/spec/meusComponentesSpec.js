@@ -1,12 +1,11 @@
-'use strict';
-describe('meuBotaoAviso', () => {
-  let $scope;
-  let element;
+describe('meuBotaoAviso', function() {
+  var $scope;
+  var element;
 
-  beforeEach(() => {
+  beforeEach(function() {
     module('meusComponentes');
 
-    inject(($rootScope, $compile) => {
+    inject(function($rootScope, $compile) {
       $scope = $rootScope.$new();
       element = angular.element('<meu-botao-aviso nome="Remover" acao="remove()">');
 
@@ -15,22 +14,22 @@ describe('meuBotaoAviso', () => {
     });
   });
 
-  it('deve criar um botao de aviso com texto e função', () => {
+  it('deve criar um botao de aviso com texto e função', function() {
     expect(element.text()).toContain('Remover');
     expect(element.attr('acao')).toBe('remove()');
   });
 
 });
 
-describe('meuFocus', () => {
-  let $scope;
-  let element;
-  let evento = 'contatoSalvo';
+describe('meuFocus', function() {
+  var $scope;
+  var element;
+  var evento = 'contatoSalvo';
 
-  beforeEach(() => {
+  beforeEach(function() {
     module('meusComponentes');
 
-    inject(($rootScope, $compile) => {
+    inject(function($rootScope, $compile) {
       $scope = $rootScope.$new();
       element = angular.element('<button meu-focus evento="'+evento+'">Voltar</button>');
 
@@ -39,7 +38,7 @@ describe('meuFocus', () => {
     });
   });
 
-  it('Deve focar o botão', () => {
+  it('Deve focar o botão', function() {
     angular.element(document.body).append(element);
     $scope.$broadcast(evento);
     expect(angular.element(document.activeElement).text()).toBe('Voltar');
@@ -47,14 +46,14 @@ describe('meuFocus', () => {
 
 });
 
-describe('meuPainel', () => {
-  let $scope;
-  let element;
+describe('meuPainel', function() {
+  var $scope;
+  var element;
 
-  beforeEach(() => {
+  beforeEach(function() {
     module('meusComponentes');
     module('templates');
-    inject(($rootScope, $compile) => {
+    inject(function($rootScope, $compile) {
       $scope = $rootScope.$new();
       element = angular.element('<meu-painel titulo="Principal"><p>Oi</p></meu-painel>');
 
