@@ -7,5 +7,6 @@ module.exports = {
   selinumUserPassword: process.env.SELINUM_USER_PASSWORD,
   port:3000,
   address: 'localhost',
-  domain: 'localhost'
+  domain: 'localhost',
+  githubCallback: 'http://localhost:3000/auth/github/callback'
 };

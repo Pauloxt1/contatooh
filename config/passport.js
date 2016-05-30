@@ -8,7 +8,7 @@ const GitHubStrategy = require('passport-github').Strategy;
 module.exports = () => {
 
   const Usuario = require('../app/models/usuario');
-  const githubCallback = 'http://'+config.domain+':'+config.port+'/auth/github/callback';
+  const githubCallback = config.githubCallback;
 
   passport.use(new  GitHubStrategy({
     clientID: config.clientID,
