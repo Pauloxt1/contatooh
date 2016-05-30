@@ -1,12 +1,12 @@
 'use strict';
-describe("ContatoController", function() {
+describe("ContatoController", () => {
 
-  var $scope;
-  var $httpBackend;
+  let $scope;
+  let $httpBackend;
 
-  beforeEach(function() {
+  beforeEach(() => {
     module('contatooh');
-    inject(function($injector, _$httpBackend_){
+    inject(($injector, _$httpBackend_) => {
       $scope = $injector.get('$rootScope').$new();
       $httpBackend = _$httpBackend_;
       $httpBackend.when('GET', '/contatos/1').respond({_id: 1});
@@ -14,12 +14,12 @@ describe("ContatoController", function() {
     });
   });
 
-  it("Deve criar um contato vazio quando nenhum parametro for passado", inject(function($controller){
+  it("Deve criar um contato vazio quando nenhum parametro for passado", inject(($controller) => {
     $controller('ContatoController', {"$scope": $scope});
     expect($scope.contato._id).toBeUndefined();
   }));
 
-  it("Deve preencher o Contato quando o parametro de rota for passado", inject(function($controller){
+  it("Deve preencher o Contato quando o parametro de rota for passado", inject(($controller) => {
     $controller('ContatoController', {"$scope": $scope, $routeParams: {'contatoId': 1}});
     $httpBackend.flush();
     expect($scope.contato._id).toBeDefined();

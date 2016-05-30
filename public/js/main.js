@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('contatooh', ['ngRoute', 'ngResource']).config(function ($routeProvider) {
+angular.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes']).config(function ($routeProvider) {
   $routeProvider.when('/contatos', {
     templateUrl: 'partials/contatos.html',
     controller: 'ContatosController'
