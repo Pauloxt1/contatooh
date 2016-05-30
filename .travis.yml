@@ -30,6 +30,6 @@ deploy:
   password:
     secure: EbYPF+8LvDtp4JZeOQzo+EmdA530c2GmUDP1Hu2FqcbgU1e/JuAgsPZTdPGos+3LjapicSiBheAH5NmcfxuhXRSkAZdXh/BUYi2HdQA4VZoiCuHZhStB4Vi3ht8LTfXH/Q3K935RtWSfAU8ZkuXSARbsn/sg86K2g2uEm+Hg81PBSmLtRYRnJJ7QmqDdmksN2fYksTMJqdjZu78BawqsoeEpc73T8mA+E+Kj49PkxMtLTTInwaURrvSApPxqbeBBv/kt+oVwHOGjby9Esq7dOpr+r9m08GknrSx7RHiifzhXvaPP3NKx875NWu20IrXnCVFD+5HZdT8bmpcloizh6kVaPbS/YT3WcAiuVqWFFqiyvM6hz0DuKvJus1TC7tigIn887mpyZvpGORiRly74BeBXseW+hAOsWoeG+uYv06HePPnJ7A1VMPOeFXfAgukjKAnll/2fjc/aHGpmOhHktsPzMrtA7nme0MhF9IdZoLAQp6bJuY9u4YFortNp1Gq+GXUS2ikDxtJnkq3eQO/3/uy2+yyQ5RRS01T/eGBD4HuIJxUGQojh5HWaYtHL9zosHVdRIM3CM7s+XPZESMbAcqhFyammPWYCrHdca9L3WU8UTUDAM5Jy19CiHlQl3Legubc9VNA+vzzyPsn/ToAoPpV51lK9YWgY9kDDZR2D7MM=
   app: contatooh
-  domain: contatooh-testedp.rhcloud.com
+  domain: testedp
   on:
     repo: Pauloxt1/contatooh

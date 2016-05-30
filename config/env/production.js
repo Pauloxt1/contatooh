@@ -1,5 +1,5 @@
 module.exports = {
-  evn: 'production',
+  env: 'production',
   db: process.env.OPENSHIFT_MONGO_DB_URL+'contatooh',
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,

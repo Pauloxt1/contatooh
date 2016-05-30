@@ -5,5 +5,5 @@ require('./config/passport')();
 require('./config/database')(config.db);
 
 app.listen(config.port, config.address, () => {
-  console.log('Express executado no '+config.address+' na porta '+config.port);
+  console.log('Express executado no '+config.address+'('+config.env+') na porta '+config.port);
 });

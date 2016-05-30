@@ -1,5 +1,5 @@
 module.exports = {
-  evn: 'development',
+  env: 'development',
   db: 'mongodb://localhost/contatooh',
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
