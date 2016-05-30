@@ -62,7 +62,7 @@ describe('meuPainel', function() {
     });
   });
 
-  it('Deve conter o titulo e o conteudo no painel', () => {
+  it('Deve conter o titulo e o conteudo no painel', function() {
       expect(element.text()).toContain('Principal');
       expect(element.text()).toContain('Oi');
   });
